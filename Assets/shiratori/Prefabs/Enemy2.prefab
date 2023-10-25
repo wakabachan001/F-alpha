@@ -10,12 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1939666795982698170}
   - component: {fileID: 6655543915395624016}
+  - component: {fileID: 653893390262496379}
   m_Layer: 6
   m_Name: Enemy2
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1939666795982698170
 Transform:
@@ -84,3 +85,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &653893390262496379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 362969493109678118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c723a2c953a7f04ebf86db3d751aa03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movelength: 0.01

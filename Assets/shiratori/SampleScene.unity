@@ -178,6 +178,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 2102672837448085483, guid: 7c1b7292413d43e4093acfa32371a9e3, type: 3}
+      propertyPath: floorTiles
+      value: 
+      objectReference: {fileID: 4960574285669778347, guid: fc1577e8597a5e640b700cecd4796e29, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c1b7292413d43e4093acfa32371a9e3, type: 3}
 --- !u!1001 &8780425164055240930
@@ -193,11 +197,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8780425164561864802, guid: 3715b5b9f608d6b418e012d1f852ce07, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.01
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8780425164561864802, guid: 3715b5b9f608d6b418e012d1f852ce07, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.4
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 8780425164561864802, guid: 3715b5b9f608d6b418e012d1f852ce07, type: 3}
       propertyPath: m_LocalPosition.z
@@ -230,6 +234,10 @@ PrefabInstance:
     - target: {fileID: 8780425164561864802, guid: 3715b5b9f608d6b418e012d1f852ce07, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8780425164561864861, guid: 3715b5b9f608d6b418e012d1f852ce07, type: 3}
+      propertyPath: orthographic size
+      value: 2.006588
       objectReference: {fileID: 0}
     - target: {fileID: 8780425164561864862, guid: 3715b5b9f608d6b418e012d1f852ce07, type: 3}
       propertyPath: m_Name
