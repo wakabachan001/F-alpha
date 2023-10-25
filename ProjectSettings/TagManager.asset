@@ -6,6 +6,9 @@ TagManager:
   tags:
   - floorTiles
   - Enemy
+  - Sword
+  - Syuriken
+  - EnemyAttack
   layers:
   - Default
   - TransparentFX
