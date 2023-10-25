@@ -51,7 +51,7 @@ public class BoardManager : MonoBehaviour
                 for (int y = 5; y < rows - 1; y++) 
                 {
                     //@‚T*‚P‚W‚Ì”ÍˆÍ‚ðgridPosition‚ÉŽw’è
-                    gridPositions.Add(new Vector3(x, y, 0f));
+                    gridPositions.Add(new Vector3(x, y + 0.2f, 0f));
                 }
             }
 

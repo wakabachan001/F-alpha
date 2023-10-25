@@ -25,8 +25,7 @@ public class cameraMove : MonoBehaviour
         }
         void MoveCamera()
         {
-            if (player.transform.position.y < n) {;}
-            else if(player.transform.position.y >= n)
+             if(player.transform.position.y >= n && player.transform.position.y <= 18)
             {
                 //c•ûŒü‚¾‚¯’Ç]
                 transform.position = new Vector3(transform.position.x, playerTransform.position.y + Movespeed1, transform.position.z);
