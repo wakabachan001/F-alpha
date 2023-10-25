@@ -28,7 +28,7 @@ public class BoardManager : MonoBehaviour
 
         public GameObject floorTiles;
     public GameObject playerTiles;
-
+    public GameObject BossTiles;
     public GameObject[] enemyTiles;
 
         //オブジェクトの位置情報を保存する変数
@@ -51,7 +51,7 @@ public class BoardManager : MonoBehaviour
                 for (int y = 5; y < rows - 1; y++) 
                 {
                     //　５*１８の範囲をgridPositionに指定
-                    gridPositions.Add(new Vector3(x, y, 0f));
+                    gridPositions.Add(new Vector3(x, y + 0.2f, 0f));
                 }
             }
 
@@ -120,8 +120,9 @@ public class BoardManager : MonoBehaviour
         //敵キャラを配置できる位置を決定し、
         InitialiseList();
 
-        //Instantiate(生成したいGameObject, 位置, 姿勢);
-        Instantiate(playerTiles, new Vector3(3, 1, 0), Quaternion.identity);
+        //Instantiate(生成したいGameObject, 位置, );
+        Instantiate(playerTiles, new Vector2(3, 1), Quaternion.identity);
+        Instantiate(BossTiles, new Vector2(3, rows), Quaternion.identity);
 
         //敵キャラをランダムで配置し、
         LayoutObjectAtRandom(enemyTiles, enemyCount.minimum, enemyCount.maximum);
