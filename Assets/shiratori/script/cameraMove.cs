@@ -9,14 +9,14 @@ public class cameraMove : MonoBehaviour
         public float Movespeed2 = 0.5f;
 
         GameObject playerObj;
-        PlayerMove player;
+        PlayerManager player;
         Transform playerTransform;
 
         int n = 3;
         void Start()
         {
             playerObj = GameObject.FindGameObjectWithTag("Player");
-            player = playerObj.GetComponent<PlayerMove>();
+            player = playerObj.GetComponent<PlayerManager>();
             playerTransform = playerObj.transform;
         }
         void LateUpdate()
