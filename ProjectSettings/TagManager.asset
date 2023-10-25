@@ -5,8 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - floorTiles
-  - Enemy
-  - Boss
+  - Enem
   layers:
   - Default
   - TransparentFX
