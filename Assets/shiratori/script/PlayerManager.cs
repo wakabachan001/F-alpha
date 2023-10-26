@@ -29,8 +29,6 @@ using UnityEngine;
 
     public GameObject AttackEffect; //近距離攻撃
     public GameObject ShotEffect;   //遠距離攻撃
-    public GameObject HPIcon;       //HPのアイコン
-    public Transform HPParent;     //HPアイコンの親
 
     void Start()
     {
@@ -79,10 +77,11 @@ using UnityEngine;
         if (Input.GetKeyDown(KeyCode.Space) && !onAttack && !onShot)//攻撃開始時(Spaceキーを押すと攻撃開始)
         {
             //攻撃エフェクトの有効化
-            AttackEffect.gameObject.SetActive(true);
-                
+            //AttackEffect.gameObject.SetActive(true);
+            Instantiate(AttackEffect, transform.position + transform.up, Quaternion.identity, this.transform);
+
             //プレイヤーの１マス前に攻撃エフェクトを移動
-            AttackEffect.transform.position = this.transform.position + transform.up;
+            //AttackEffect.transform.position = this.transform.position + transform.up;
            
             time = 0.0f;        //時間のリセット
             onAttack = true;    //攻撃フラグオン
@@ -107,8 +106,6 @@ using UnityEngine;
             onShot = true;      //攻撃フラグオン
         }
 
-
-
     }
 
         private void FixedUpdate()
@@ -122,8 +119,9 @@ using UnityEngine;
             //timeが指定した時間以上になると
             if (time >= EffectLimit)
             {
+                
                 //オブジェクトの無効化
-                AttackEffect.gameObject.SetActive(false);
+                //AttackEffect.gameObject.SetActive(false);
                 //攻撃フラグを下げる
                 onAttack = false;
             }
