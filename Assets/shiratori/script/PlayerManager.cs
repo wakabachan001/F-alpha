@@ -32,11 +32,11 @@ using UnityEngine;
 
     void Start()
     {
-        for (HPcount = playerHP; HPcount > 0; HPcount--)
-        {
-            Instantiate(HPIcon, new Vector3(HPposX + HPcount, HPposY, 0), Quaternion.identity, HPParent);
-            Debug.Log("クローン生成");
-        }
+        //for (HPcount = playerHP; HPcount > 0; HPcount--)
+        //{
+        //    Instantiate(HPIcon, new Vector3(HPposX + HPcount, HPposY, 0), Quaternion.identity, HPParent);
+        //    Debug.Log("クローン生成");
+        //}
     }
 
     // Update is called once per frame
