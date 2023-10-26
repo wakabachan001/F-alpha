@@ -11,8 +11,10 @@ using UnityEngine;
     public float HPcount;
     
     public float EffectLimit;       //‹ß‹——£UŒ‚‚Ì”»’è‚ªc‚éŠÔ
-    public float ShotLimit = 3.5f; //‰“‹——£UŒ‚‚Ì”ò‹——£‚ÌãŒÀ
+    public float ShotLimit = 3.5f;  //‰“‹——£UŒ‚‚Ì”ò‹——£‚ÌãŒÀ
     private float ShotLange;        //‰“‹——£UŒ‚‚Ì”ò‹——£
+    public float SwordDamage = 2.0f;     //‹ß‹——£UŒ‚ƒ_ƒ[ƒW
+    public float SyurikenDamage = 1.5f;  //‰“‹——£UŒ‚ƒ_ƒ[ƒW
 
     public float leftLimit = 1.0f;  //N“ü‚Å‚«‚é¶‚ÌŒÀŠE
     public float rightLimit = 5.0f; //N“ü‚Å‚«‚é‰E‚ÌŒÀŠE
