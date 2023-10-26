@@ -182,6 +182,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 4204925967101372154, guid: 3cdbf3d1aab4c1a479c70961f9f74a6d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4204925967101372155, guid: 3cdbf3d1aab4c1a479c70961f9f74a6d, type: 3}
       propertyPath: m_SortingLayer
       value: 3
@@ -192,11 +196,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3cdbf3d1aab4c1a479c70961f9f74a6d, type: 3}
---- !u!1 &1186167751 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4204925967101372154, guid: 3cdbf3d1aab4c1a479c70961f9f74a6d, type: 3}
-  m_PrefabInstance: {fileID: 367356763}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1786019014
 GameObject:
   m_ObjectHideFlags: 0
@@ -255,10 +254,8 @@ MonoBehaviour:
   upLimit: 20
   HPposX: 1
   HPposY: 1
-  AttackEffect: {fileID: 1186167751}
+  AttackEffect: {fileID: 4204925967101372154, guid: 3cdbf3d1aab4c1a479c70961f9f74a6d, type: 3}
   ShotEffect: {fileID: 1982990320}
-  HPIcon: {fileID: 0}
-  HPParent: {fileID: 0}
 --- !u!212 &1786019017
 SpriteRenderer:
   m_ObjectHideFlags: 0
