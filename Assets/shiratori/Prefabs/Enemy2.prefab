@@ -101,6 +101,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movelength: 0.02
+  EnemyAttackEffect: {fileID: 4298710105537320394, guid: c63942278032dca40935a9a8459aadfc, type: 3}
+  EffectLimit: 0.2
 --- !u!114 &5357519566127170224
 MonoBehaviour:
   m_ObjectHideFlags: 0
