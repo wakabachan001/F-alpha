@@ -8,6 +8,7 @@ using UnityEngine;
     public float speed = 1.0f;      //移動距離
     public float shotSpeed = 0.2f;  //手裏剣の速度
     public float playerHP = 4.0f;   //プレイヤーの体力
+    public float HPcount;
     
     public float EffectLimit;       //近距離攻撃の判定が残る時間
     public float ShotLimit = 3.5f; //遠距離攻撃の飛距離の上限
@@ -16,6 +17,8 @@ using UnityEngine;
     public float leftLimit = 1.0f;  //侵入できる左の限界
     public float rightLimit = 5.0f; //侵入できる右の限界
     public float upLimit = 20.0f;   //侵入できる上の限界
+    public float HPposX = 1.0f;
+    public float HPposY = 1.0f;
 
     bool onAttack = false;      //近距離攻撃フラグ
     bool onShot = false;        //遠距離攻撃フラグ
@@ -24,10 +27,16 @@ using UnityEngine;
 
     public GameObject AttackEffect; //近距離攻撃
     public GameObject ShotEffect;   //遠距離攻撃
+    public GameObject HPIcon;       //HPのアイコン
+    public Transform HPParent;     //HPアイコンの親
 
     void Start()
     {
-
+        //for (HPcount = playerHP; HPcount > 0; HPcount--)
+        //{
+        //    Instantiate(HPIcon, new Vector3(HPposX + HPcount, HPposY, 0), Quaternion.identity, HPParent);
+        //    Debug.Log("クローン生成");
+        //}
     }
 
     // Update is called once per frame
@@ -146,7 +155,7 @@ using UnityEngine;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "EnemyAttack")
+        if(collision.gameObject.tag == "EnemyAttack"|| collision.gameObject.tag == "Enemy")
         {
             playerHP -= 1.0f;//プレイヤーの体力を減らす（後で右を変更）
             PlayerDead();

@@ -5,7 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - floorTiles
-  - Enem
+  - Syuriken
+  - Sword
+  - Boss
+  - Enemy
+  - EnemyAttack
   layers:
   - Default
   - TransparentFX

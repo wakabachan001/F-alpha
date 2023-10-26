@@ -11,13 +11,14 @@ GameObject:
   - component: {fileID: 9076579180294976952}
   - component: {fileID: 9076579180294976953}
   - component: {fileID: 9076579180294976950}
+  - component: {fileID: 1648476112933474961}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &9076579180294976952
 Transform:
   m_ObjectHideFlags: 0
@@ -74,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: -807326775
   m_SortingLayer: 2
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: fd60ecd6b1e2a9649a1aaa921a36002e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0eeaefce84066504e800d853381a430a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -92,9 +93,31 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9076579180294976951}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2cf7119840de8674589c4df42c7077c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   movelength: 1
+--- !u!114 &1648476112933474961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9076579180294976951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21d95f403939aea4d9c9a274642f1d8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+  shotSpeed: 0.2
+  playerHP: 4
+  EffectLimit: 0.2
+  ShotLimit: 3.5
+  leftLimit: 1
+  rightLimit: 5
+  upLimit: 20
+  AttackEffect: {fileID: 4204925967101372154, guid: 3cdbf3d1aab4c1a479c70961f9f74a6d, type: 3}
+  ShotEffect: {fileID: 3445585870904498179, guid: a1a6d43f521c0b041a8ef284e817af41, type: 3}

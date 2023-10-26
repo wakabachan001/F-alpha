@@ -271,7 +271,7 @@ GameObject:
   - component: {fileID: 708579088}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -440,13 +440,18 @@ MonoBehaviour:
   speed: 1
   shotSpeed: 0.2
   playerHP: 4
+  HPcount: 0
   EffectLimit: 0.2
   ShotLimit: 3.5
   leftLimit: 1
   rightLimit: 5
   upLimit: 20
+  HPposX: 0
+  HPposY: 0
   AttackEffect: {fileID: 2041318632}
   ShotEffect: {fileID: 552184323}
+  HPIcon: {fileID: 371204885923705722, guid: a6a3348a77d77aa4581776982f91eeb6, type: 3}
+  HPParent: {fileID: 1169351951}
 --- !u!212 &751589395
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -638,7 +643,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1169351948}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3, y: 3, z: -10}
+  m_LocalPosition: {x: 3, y: 2, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

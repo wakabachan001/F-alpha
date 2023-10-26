@@ -5,11 +5,12 @@ using UnityEngine.AI;
 
 public class Enemy02AI : MonoBehaviour
 {
-    public float movelength = 1.0f;
+    public float movelength = 0.02f;
+    float hanpuku = -1.0f;
 
     GameObject cameraObj;
-    cameraMove camera;
-    Transform cameraTransform;
+        cameraMove camera;
+        Transform cameraTransform;
 
     // Start is called before the first frame update
     void Start()
@@ -22,14 +23,32 @@ public class Enemy02AI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector2 position = transform.position;
+        
+    }
 
-        //float MoveCT = 2.0f;
+    private void FixedUpdate()
+    {
+        Vector2 position = transform.position; 
 
-        if (cameraTransform.position.y + 2 >= position.y && cameraTransform.position.y - 2.5 <= position.y) 
+
+        if (cameraTransform.position.y + 2 >= position.y && cameraTransform.position.y - 2.5 <= position.y)
         {
-            transform.position = new Vector2(position.x, position.y - movelength);
-            Debug.Log("aa");
+
+          //@“G‚O‚Q‚ð¶‰E‚ÉˆÚ“®‚³‚¹‚é----------------------------------------------------------------
+             transform.position = new Vector2(position.x += movelength , position.y);
+
+             if(transform.position.x > 5)
+             {
+                //position.x = 5;
+                movelength *= hanpuku ; 
+             }
+             if(transform.position.x <= 1)
+             {
+                //position.x = 1;
+                movelength *= hanpuku;
+             }
+            // -----------------------------------------------------------------------------------------
+            Debug.Log(position.x);
         }
     }
 }
