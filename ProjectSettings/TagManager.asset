@@ -10,6 +10,7 @@ TagManager:
   - Boss
   - Enemy
   - EnemyAttack
+  - ActiveArea
   layers:
   - Default
   - TransparentFX

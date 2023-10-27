@@ -8,7 +8,6 @@ using UnityEngine;
     public float speed = 1.0f;      //移動距離
     public float shotSpeed = 0.2f;  //手裏剣の速度
     public float playerHP = 4.0f;   //プレイヤーの体力
-    public float HPcount;
     
     public float EffectLimit;       //近距離攻撃の判定が残る時間
     public float ShotLimit = 3.5f;  //遠距離攻撃の飛距離の上限
@@ -131,9 +130,11 @@ using UnityEngine;
     //敵などとの接触時のダメージ判定
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("接触");
         //接触タグが敵の攻撃か、敵本体ならHPを減らす
         if(collision.gameObject.tag == "EnemyAttack"|| collision.gameObject.tag == "Enemy")
         {
+            Debug.Log("ダメージを食らった");
             playerHP -= 1.0f;   //プレイヤーの体力を減らす（後で右を変更）
             PlayerDead();       //プレイヤーが倒れるかチェック
         }
