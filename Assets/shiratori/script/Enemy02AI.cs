@@ -61,7 +61,7 @@ public class Enemy02AI : MonoBehaviour
             // -----------------------------------------------------------------------------------------
 
             if (playerTransform.position.x < transform.position.x + 0.5 &&
-                playerTransform.position.x < transform.position.x - 0.5 &&
+                playerTransform.position.x > transform.position.x - 0.5 &&
                 playerTransform.position.y < transform.position.y - 1.0 && !onAttack)
             {
                 Debug.Log("“G‚ªUŒ‚");
