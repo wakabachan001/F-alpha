@@ -12,7 +12,7 @@ using UnityEngine;
     
     public float EffectLimit;       //近距離攻撃の判定が残る時間
     public float ShotLimit = 3.5f;  //遠距離攻撃の飛距離の上限
-    private float ShotLange;        //遠距離攻撃の飛距離
+    public float ShotLange;        //遠距離攻撃の飛距離
     public float SwordDamage = 2.0f;     //近距離攻撃ダメージ
     public float SyurikenDamage = 1.5f;  //遠距離攻撃ダメージ
 
@@ -32,11 +32,7 @@ using UnityEngine;
 
     void Start()
     {
-        //for (HPcount = playerHP; HPcount > 0; HPcount--)
-        //{
-        //    Instantiate(HPIcon, new Vector3(HPposX + HPcount, HPposY, 0), Quaternion.identity, HPParent);
-        //    Debug.Log("クローン生成");
-        //}
+
     }
 
     // Update is called once per frame
@@ -76,13 +72,9 @@ using UnityEngine;
         //近距離攻撃
         if (Input.GetKeyDown(KeyCode.Space) && !onAttack && !onShot)//攻撃開始時(Spaceキーを押すと攻撃開始)
         {
-            //攻撃エフェクトの有効化
-            //AttackEffect.gameObject.SetActive(true);
-            Instantiate(AttackEffect, transform.position + transform.up, Quaternion.identity, this.transform);
+            //プレイヤーの前方に攻撃エフェクトのクローン生成
+            Instantiate(AttackEffect, transform.position + transform.up, Quaternion.identity);
 
-            //プレイヤーの１マス前に攻撃エフェクトを移動
-            //AttackEffect.transform.position = this.transform.position + transform.up;
-           
             time = 0.0f;        //時間のリセット
             onAttack = true;    //攻撃フラグオン
         }
@@ -96,11 +88,8 @@ using UnityEngine;
             else
                 ShotLange = ShotLimit - 1.0f;
 
-            //攻撃エフェクトの有効化
-            ShotEffect.gameObject.SetActive(true);            
-
-            //プレイヤーの位置に移動
-            ShotEffect.transform.position = this.transform.position;
+            //プレイヤーの位置に手裏剣のクローン生成
+            Instantiate(ShotEffect, transform.position, Quaternion.identity);
 
             time = 0.0f;        //時間のリセット
             onShot = true;      //攻撃フラグオン
@@ -119,9 +108,6 @@ using UnityEngine;
             //timeが指定した時間以上になると
             if (time >= EffectLimit)
             {
-                
-                //オブジェクトの無効化
-                //AttackEffect.gameObject.SetActive(false);
                 //攻撃フラグを下げる
                 onAttack = false;
             }
@@ -130,39 +116,30 @@ using UnityEngine;
         //遠距離攻撃処理
         if (onShot)
         {
-            //timeを速度と同じだけ増やす（１秒でyに1.0増やす）
+            //timeを速度と同じだけ増やす
             time += shotSpeed;
-
-            //遠距離攻撃エフェクトの座標取得
-            Vector3 shotpos = ShotEffect.transform.position;
-
-            //上方向に進ませる
-            shotpos += new Vector3(0, shotSpeed, 0);
-
-            //座標更新
-            ShotEffect.transform.position = shotpos;
 
             //timeが指定した時間以上になると
             if (time >= ShotLange)
             {
-                //オブジェクトの無効化
-                ShotEffect.gameObject.SetActive(false);
                 //攻撃フラグを下げる
                 onShot = false;
             }
         }
         }
 
+    //敵などとの接触時のダメージ判定
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //接触タグが敵の攻撃か、敵本体ならHPを減らす
         if(collision.gameObject.tag == "EnemyAttack"|| collision.gameObject.tag == "Enemy")
         {
-            playerHP -= 1.0f;//プレイヤーの体力を減らす（後で右を変更）
-            PlayerDead();
+            playerHP -= 1.0f;   //プレイヤーの体力を減らす（後で右を変更）
+            PlayerDead();       //プレイヤーが倒れるかチェック
         }
-        PlayerDead();
     }
 
+    //プレイヤーがやられたとき関数
     void PlayerDead()
     {
         if (playerHP <= 0)
