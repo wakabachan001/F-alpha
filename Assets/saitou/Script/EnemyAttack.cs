@@ -12,12 +12,14 @@ public class EnemyAttack : MonoBehaviour
 
     public GameObject AttackEffect;//クローンするオブジェクト
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("当たり");
         //アクティブエリア内に入ったら
         if (collision.gameObject.tag == "ActiveArea")
         {
             moveOn = true;//行動可能フラグをオン
+            Debug.Log("行動可能");
         }
     }
 

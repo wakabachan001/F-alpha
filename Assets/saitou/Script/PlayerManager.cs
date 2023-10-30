@@ -28,6 +28,8 @@ using UnityEngine;
 
     public GameObject AttackEffect; //近距離攻撃
     public GameObject ShotEffect;   //遠距離攻撃
+    public GameObject ghostPrefab;  //残像用のプレハブ
+    public HPBar hpbar; //HPBarスクリプト
 
     void Start()
     {
@@ -45,24 +47,30 @@ using UnityEngine;
         if (Input.GetKeyDown("left") && 
             position.x > leftLimit)
         {
+            CloneAfterimage();
             position.x -= speed;
         }
         if (Input.GetKeyDown("right") && 
             position.x < rightLimit)
         {
+            CloneAfterimage();
             position.x += speed;
         }
         if (Input.GetKeyDown("up") && 
             position.y < upLimit)
         {
+            CloneAfterimage();
             position.y += speed;
             onBottomColumn = false;
         }
         if (Input.GetKeyDown("down") && 
             !onBottomColumn)
         {
+            CloneAfterimage();
             position.y -= speed;
-            onBottomColumn = true;  //後退時に下列にいることにする
+            //ボスエリアより手前なら
+            if(transform.position.y < 19.0f)
+                onBottomColumn = true;  //後退時に下列にいることにする
         }
         
 
@@ -130,12 +138,15 @@ using UnityEngine;
     //敵などとの接触時のダメージ判定
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("接触");
         //接触タグが敵の攻撃か、敵本体ならHPを減らす
         if(collision.gameObject.tag == "EnemyAttack"|| collision.gameObject.tag == "Enemy")
         {
             Debug.Log("ダメージを食らった");
             playerHP -= 1.0f;   //プレイヤーの体力を減らす（後で右を変更）
+
+            //HPBarの呼び出し
+            hpbar.UpdateHP(playerHP);
+
             PlayerDead();       //プレイヤーが倒れるかチェック
         }
     }
@@ -148,6 +159,14 @@ using UnityEngine;
             Debug.Log("やられた");
             Destroy(gameObject, 0.4f);
         }
+    }
+
+    //残像生成関数
+    void CloneAfterimage()
+    {
+        //元のオブジェクトの位置に残像を生成
+        GameObject ghost =
+            Instantiate(ghostPrefab, transform.position, transform.rotation);
     }
 }
 
