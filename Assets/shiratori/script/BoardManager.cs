@@ -20,14 +20,16 @@ public class BoardManager : MonoBehaviour
             maximum = max;
         }
     }
-        // 20*5のゲームボードを作るので縦の段を２０横の列を５
-        public int columns = 5;
-        public int rows = 20;
+
+    // 20*5のゲームボードを作るので縦の段を２０横の列を５
+    public int columns = 5;
+    public int rows = 20;
+    public float adjustment = 0.2f;//オブジェクト位置調整用
 
     public Count enemyCount = new Count(14, 20);
 
-        public GameObject floorTiles;
-    public GameObject playerTiles;
+    public GameObject floorTiles;
+
     public GameObject BossTiles;
     public GameObject[] enemyTiles;
 
@@ -51,7 +53,7 @@ public class BoardManager : MonoBehaviour
                 for (int y = 5; y < rows - 1; y++) 
                 {
                     //　５*１８の範囲をgridPositionに指定
-                    gridPositions.Add(new Vector3(x, y + 0.2f, 0f));
+                    gridPositions.Add(new Vector3(x, y + adjustment, 0f));
                 }
             }
 
@@ -121,8 +123,8 @@ public class BoardManager : MonoBehaviour
         InitialiseList();
 
         //Instantiate(生成したいGameObject, 位置, );
-        Instantiate(playerTiles, new Vector2(3, 1), Quaternion.identity);
-        Instantiate(BossTiles, new Vector2(3, rows), Quaternion.identity);
+
+        Instantiate(BossTiles, new Vector2(3, rows + adjustment), Quaternion.identity);
 
         //敵キャラをランダムで配置し、
         LayoutObjectAtRandom(enemyTiles, enemyCount.minimum, enemyCount.maximum);

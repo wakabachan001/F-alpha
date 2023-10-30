@@ -102,12 +102,18 @@ MonoBehaviour:
   speed: 1
   shotSpeed: 0.2
   playerHP: 4
+  HPcount: 0
   EffectLimit: 0.2
   ShotLimit: 3.5
+  ShotLange: 0
+  SwordDamage: 2
+  SyurikenDamage: 1.5
   leftLimit: 1
   rightLimit: 5
   upLimit: 20
-  AttackEffect: {fileID: 0}
+  HPposX: 1
+  HPposY: 1
+  AttackEffect: {fileID: 8667471911016283574, guid: 77a0e99abb5950842a6f2dfbfb6b24b8, type: 3}
   ShotEffect: {fileID: 0}
 --- !u!50 &7292089952057102000
 Rigidbody2D:

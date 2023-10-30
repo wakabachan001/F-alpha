@@ -101,6 +101,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movelength: 0.02
+  EnemyAttackEffect: {fileID: 4298710105537320394, guid: c63942278032dca40935a9a8459aadfc, type: 3}
+  EffectLimit: 0.2
 --- !u!114 &5357519566127170224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,5 +163,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.9, y: 0.9}
   m_EdgeRadius: 0

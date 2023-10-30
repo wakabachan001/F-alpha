@@ -10,6 +10,7 @@ TagManager:
   - Boss
   - Enemy
   - EnemyAttack
+  - ActiveArea
   layers:
   - Default
   - TransparentFX
@@ -52,4 +53,7 @@ TagManager:
     locked: 0
   - name: Units
     uniqueID: 3487640521
+    locked: 0
+  - name: Player
+    uniqueID: 161215549
     locked: 0
